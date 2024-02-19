@@ -24,13 +24,16 @@ const ChatGPT = () => {
 
     // Call the Node.js server to generate a response
     try {
-      const response = await fetch("http://localhost:3001/generate-response", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ input: inputText }),
-      });
+      const response = await fetch(
+        "https://chatgpt-be-clone-deepskillz.onrender.com/generate-response",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ input: inputText }),
+        }
+      );
 
       const responseData = await response.json();
 
